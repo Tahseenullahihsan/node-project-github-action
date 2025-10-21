@@ -21,9 +21,9 @@ jobs:
         uses: actions/checkout@v3
 # this jobs is runing on the seld hosted runner   
       - name: checking the node envirment
-        uses: acttions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
-           node-vresion: '18'
+            node-version:: '18'
       - name: npm isntall
         run: npm ci
       - name: to chek the vulnerabilties
