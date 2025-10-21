@@ -25,6 +25,6 @@ jobs:
         with:
             node-version:: '18'
       - name: npm install
-        run: install
+        run: npm install
       - name: to chek the vulnerabilties
         run: npm audit  --audit-level=high || true
