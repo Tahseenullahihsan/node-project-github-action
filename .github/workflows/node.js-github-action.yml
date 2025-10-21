@@ -8,6 +8,7 @@ on:
   pull_request:
     branches: 
       - 'feature/**'
+      - 'main'
 
 jobs:
   ci-cd:
@@ -18,4 +19,11 @@ jobs:
     steps: 
       - name: Checkout action to pull the code into the action runner
         uses: actions/checkout@v3
-# this jobs is runing on the seld hosted runner 
+# this jobs is runing on the seld hosted runner   
+      - name: checking the node envirment
+        uses: actions/setup-node@v3
+        with:
+            node-version:: '18'
+
+      - name: to chek the vulnerabilties
+        run: npm audit  --audit-level=high || true
