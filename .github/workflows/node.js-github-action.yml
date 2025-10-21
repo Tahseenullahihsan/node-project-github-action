@@ -1,0 +1,19 @@
+name: workflow for the nodejs application
+
+on: 
+  push: 
+    branches:
+      - 'feature/**'
+  pull_request:
+    branches: 
+      - 'feature/**'
+
+jobs:
+  ci-cd:
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: .
+    steps: 
+        - name: Checkout action to pull the code into the action runner
+          run: action/checkout@v3
