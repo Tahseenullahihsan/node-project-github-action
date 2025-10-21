@@ -4,6 +4,7 @@ on:
   push: 
     branches:
       - 'feature/**'
+      - 'main'
   pull_request:
     branches: 
       - 'feature/**'
@@ -15,5 +16,5 @@ jobs:
       run:
         working-directory: .
     steps: 
-        - name: Checkout action to pull the code into the action runner
-          run: action/checkout@v3
+      - name: Checkout action to pull the code into the action runner
+        uses: actions/checkout@v3
