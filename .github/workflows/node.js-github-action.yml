@@ -25,22 +25,16 @@ jobs:
         with:
             node-version:: '18'
       - name: Install dependencies
-        run: npm install --save-dev mocha chai nyc
+        run: npm install --save-dev jest
 
       - name: Run tests with coverage
-        run: npx nyc mocha
+        run: npx jest --coverage --coverageDirectory=coverage
 
       - name: Upload the HTML coverage report
-        uses: actions/upload-artifact@v4
-        with:
+       uses: actions/upload-artifact@v4
+       with:
          name: store-the-artifacts
          path: coverage
-
-
-      - name: to chek the vulnerabilties
-        run: npm audit  --audit-level=high
-      - name: npm test with coverage repot
-        run:  npm test -- --coverage
       
       - name: SonarQube Scan
         env:
