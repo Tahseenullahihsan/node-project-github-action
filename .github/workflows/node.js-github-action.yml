@@ -30,7 +30,7 @@ jobs:
       - name: npm test with coverage repot
         run:  npm test -- --coverage
       - name: upload the html coverage repot
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: store the artifaces
             path: coverage/loc-reports
