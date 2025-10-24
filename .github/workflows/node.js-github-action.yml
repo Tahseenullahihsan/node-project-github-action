@@ -35,6 +35,19 @@ jobs:
         with:
          name: store-the-artifacts
          path: coverage
+      - name: OWASP Dependency Check
+        uses: dependency-check/dependency-check-action@v2
+        with:
+          project: node-github-action
+          scan: .
+          format: ALL
+          out: dependency-check-report
+
+      - name: Upload OWASP HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-check-report
+          path: dependency-check-report
       
       - name: SonarQube Scan
         env:
