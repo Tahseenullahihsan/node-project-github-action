@@ -24,16 +24,21 @@ jobs:
         uses: actions/setup-node@v3
         with:
             node-version:: '18'
-
-      - name: to chek the vulnerabilties
-        run: npm audit  --audit-level=high
-      - name: npm test with coverage repot
-        run:  npm test -- --coverage
+      - name: intall the jtest 
+        run: npm install --save-dev jest
+      - name: Run tests with coverage
+        run: npx jest --coverage --coverageDirectory=coverage
       - name: upload the html coverage repot
         uses: actions/upload-artifact@v4
         with:
             name: store the artifaces
             path: coverage/loc-reports
+
+      - name: to chek the vulnerabilties
+        run: npm audit  --audit-level=high
+      - name: npm test with coverage repot
+        run:  npm test -- --coverage
+      
       - name: SonarQube Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
