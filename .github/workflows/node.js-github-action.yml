@@ -39,4 +39,4 @@ jobs:
             -Dsonar.sources=. \
             -Dsonar.host.url=$SONAR_HOST_URL \
             -Dsonar.login=$SONAR_TOKEN
-#this commit contain that  the sonar user had granted  the necessay permssionj of executing this repo 
+#this commit contain that  the sonar user had granted  the necessay permssion update the system admanistator is chek now
