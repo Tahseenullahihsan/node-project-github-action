@@ -31,8 +31,8 @@ jobs:
         run: npx jest --coverage --coverageDirectory=coverage
 
       - name: Upload the HTML coverage report
-       uses: actions/upload-artifact@v4
-       with:
+        uses: actions/upload-artifact@v4
+        with:
          name: store-the-artifacts
          path: coverage
       
