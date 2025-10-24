@@ -27,6 +27,13 @@ jobs:
 
       - name: to chek the vulnerabilties
         run: npm audit  --audit-level=high
+      - name: npm test with coverage repot
+        run:  npm test -- --coverage
+      - name: upload the html coverage repot
+        uses: actions/upload-artifact@v3
+        with:
+            name: store the artifaces
+            path: coverage/loc-reports
       - name: SonarQube Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
