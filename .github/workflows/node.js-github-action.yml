@@ -32,7 +32,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
-          sudo npm install -g sonar-scanner
+          npx install -g sonar-scanner
           sonar-scanner \
             -Dsonar.projectKey=node-github-action \
             -Dsonar.projectName=node-github-action \
