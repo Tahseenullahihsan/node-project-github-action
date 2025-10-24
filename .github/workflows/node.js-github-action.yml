@@ -24,15 +24,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
             node-version:: '18'
-      - name: intall the jtest 
-        run: npm install --save-dev jest
+      - name: Install dependencies
+        run: npm install --save-dev mocha chai nyc
+
       - name: Run tests with coverage
-        run: npx jest --coverage --coverageDirectory=coverage
-      - name: upload the html coverage repot
+        run: npx nyc mocha
+
+      - name: Upload the HTML coverage report
         uses: actions/upload-artifact@v4
         with:
-            name: store the artifaces
-            path: coverage/loc-reports
+         name: store-the-artifacts
+         path: coverage
+
 
       - name: to chek the vulnerabilties
         run: npm audit  --audit-level=high
