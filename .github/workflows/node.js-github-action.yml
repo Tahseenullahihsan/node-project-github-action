@@ -36,10 +36,10 @@ jobs:
          name: store-the-artifacts
          path: coverage
       - name: OWASP Dependency Check
-        uses: dependency-check/dependency-check-action@v3
+        uses: dependency-check/Dependency-Check_Action@main
         with:
           project: node-github-action
-          scan: .
+          path: . 
           format: ALL
           out: dependency-check-report
 
