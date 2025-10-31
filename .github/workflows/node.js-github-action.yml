@@ -36,7 +36,7 @@ jobs:
          name: store-the-artifacts
          path: coverage
       - name: OWASP Dependency Check
-        uses: dependency-check/dependency-check-action@v2
+        uses: dependency-check/dependency-check-action@v3
         with:
           project: node-github-action
           scan: .
