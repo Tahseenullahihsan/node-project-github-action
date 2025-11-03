@@ -51,7 +51,7 @@ jobs:
         with:
           name: dependency-check-report
           path: dependency-check-report
-      
+      # the sonar token has been  updated 
       - name: SonarQube Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
