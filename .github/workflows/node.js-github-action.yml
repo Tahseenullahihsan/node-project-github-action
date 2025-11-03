@@ -83,3 +83,7 @@ jobs:
           vuln-type: 'os,library'
       # severity: 'CRITICAL,HIGH'  # Optional: limit the scan output
 # this the chnages made this into the stage that push it into the main
+      -  name: docker publish into the docker hub
+         run: |
+          docker push ${{secrets.DOCKERHUB_USERNAME}}/my-app:${{env. IMAGE_TAG}}
+# stage for the docker push into the docker hub registry 
